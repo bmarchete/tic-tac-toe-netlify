@@ -1,0 +1,119 @@
+html,
+body {
+    height: 100%;
+}
+
+body {
+    background: rgb(13, 128, 182);
+    font-family: 'Open Sans', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+span {
+    margin: 0;
+    user-select: none;
+}
+
+.fixed{
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+}
+.texto {
+    font-size: 4em;
+    font-weight: 100;
+    text-align: center;
+    text-transform: uppercase;
+    color: white;
+}
+
+.painel {
+    display: flex;
+    font-family: 'Open Sans', sans-serif;
+    justify-content: center;
+    align-items: center;
+}
+
+.painel-titulo{
+    height: 15%;
+}
+
+.velha {
+    display: flex;
+    font-family: 'Open Sans', sans-serif;
+    justify-content: center;
+    margin-top: 50px;
+    /* align-items: center; */
+}
+
+.velha .coluna {
+    display: flex;
+    flex-direction: column;
+    /* justify-content: space-between; */
+    border-right: 3px solid white;
+}
+
+.velha .coluna:last-child {
+    border: none;
+}
+
+.velha .quadro {
+    /* display: block; */
+    width: 125px;
+    height: 125px;
+    /*     border: 1px solid #e4e4e4; */
+    color: #e4e4e4;
+    font-size: 5em;
+    font-weight: 100;
+    text-align: center;
+    border-bottom: 3px solid white;
+}
+
+.velha .quadro:last-child {
+    border: none;
+}
+
+
+#modais {
+    position: absolute;
+    margin: 130px auto;
+    font-family: inherit;
+    z-index: 3;
+    
+}
+
+.modalClass {
+    background: wheat;
+    width: 200px;
+    padding: 20px;
+    display: block;
+    animation-name: appear;
+    animation-duration: 0.4s;
+    margin-bottom: 10px;
+}
+
+@keyframes appear {
+    from {
+        opacity: 0
+    }
+    to {
+        opacity: 1
+    }
+}
+
+.removed {
+    animation: disapear .4s;
+    animation-fill-mode: forwards;
+}
+
+@keyframes disapear {
+    50% {
+        transform: translateX(5%);
+    }
+    100% {
+        transform: translateX(-200%);
+    }
+}

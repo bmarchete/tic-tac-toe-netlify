@@ -11,32 +11,32 @@
 </head>
 
 <body>
-
     <nav class="navbar navbar-expand-lg navbar-dark bg-primary fixed">
-        <a class="navbar-brand" href="#">Jogo da Velha</a>
-
-        <ul class="navbar-nav mr-auto">
-            <li class="nav-item">
-                <a class="nav-link" href="#" id="salva-temp">Salvar temporário</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="#" id="carrega-temp">Carregar temporário</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="#" id="limpa-temp">Limpar</a>
-            </li>
-          
-        </ul>
-
-        <div class="form-inline my-2 my-lg-0">
-            <input id="jogadorX" class="form-control mr-sm-2" type="text" placeholder="Jogador X">
-            <input id="jogadorO" class="form-control mr-sm-2" type="text" placeholder="Jogador O">
+        <div class="container">
+            <a class="navbar-brand" href="#">Game</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive"
+                aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarResponsive">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#" id="salva-temp">Save</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#" id="carrega-temp">Load</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#" id="limpa-temp">Clear</a>
+                    </li>
+                    
+                </ul>
+            </div>
         </div>
 
         <div id="modais"></div>
-
     </nav>
-
+    
     <div id="velha" class="velha">
         <div class="coluna">
             <span data-id="0" class="quadro"></span>

@@ -18,9 +18,6 @@ class JogoVelha {
   }
   iniciaElementos() {
 
-    this.jogadorX = document.querySelector("#jogadorX");
-    this.jogadorO = document.querySelector("#jogadorO");
-
     this.salvaTemp = document.querySelector("#salva-temp");
     this.salvaTemp.addEventListener('click', this.salvaLocal.bind(this));
 
@@ -30,13 +27,18 @@ class JogoVelha {
     this.limpaTemp = document.querySelector("#limpa-temp");
     this.limpaTemp.addEventListener('click', this.limpar.bind(this));
 
-    // this.salvar = document.querySelector("#salvar");
-    // this.salvar.addEventListener("click", this.enviaServidor.bind(this));
-
     this.velha = document.querySelector("#velha");
     this.velha.addEventListener("click", event => {
       this.realizaJogada(event);
       this.render();
+    });
+
+    this.navbarToggler = document.querySelector('.navbar-toggler');
+    this.navbarCollapse = document.querySelector('.navbar-collapse');
+    
+
+    this.navbarToggler.addEventListener('click', () => {
+      this.navbarCollapse.classList.toggle('collapse');
     });
 
   }
@@ -44,19 +46,18 @@ class JogoVelha {
   limpar(){
     localStorage.setItem('jogo', '');
     this.iniciaEstado();
-    this.jogadorO.value = '';
-    this.jogadorX.value = '';
     this.render();
   }
 
   carregarLocal(){
-    const dados = JSON.parse(localStorage.getItem('jogo'));
-    this.jogadas = dados.jogo;
-    this.jogadorO.value = dados.jogadorO;
-    this.jogadorX.value = dados.jogadorX;
-
+    try {
+      this.jogadas = JSON.parse(localStorage.getItem('jogo'));
+      this.messages.push("This was your last saved game");
+    } catch (error) {
+      this.messages.push("There is no previous game");
+    }
+    
     this.render();
-
   }
 
   salvaLocal(){
@@ -64,9 +65,7 @@ class JogoVelha {
     const jogadorX = document.querySelector("#jogadorX");
     const jogadorO = document.querySelector("#jogadorO");
 
-    const dados = {jogadorX: jogadorX.value, jogadorO: jogadorO.value, jogo: this.jogadas};
-
-    localStorage.setItem('jogo', JSON.stringify(dados));
+    localStorage.setItem('jogo', JSON.stringify(this.jogadas));
   }
 
   realizaJogada(event) {
@@ -74,19 +73,19 @@ class JogoVelha {
 
     // verifica se a partida terminou
     if (this.fim) {
-      this.messages.push("Partida terminada");
+      this.messages.push("The game has endend");
       return;
     }
 
     // verifica se escolheu uma casa correta
     if (!event.target.dataset.id) {
-      this.messages.push("Você precisa clicar em uma casa");
+      this.messages.push("You need o choose a square!");
       return;
     }
 
     // verifica se a posição é válida
     if (this.jogadas[id] != 0) {
-      this.messages.push("Esta posição já foi escolhida");
+      this.messages.push("This position is invalid");
       return;
     }
 
@@ -104,7 +103,7 @@ class JogoVelha {
     if (resultado == 'X' || resultado == 'O') {
       this.fim = true;
       
-      this.messages.push(`O jogador ${resultado} venceu!`);
+      this.messages.push(`Player ${resultado} wins!`);
     }
 
     //renderiza as jogadas no tabuleiro

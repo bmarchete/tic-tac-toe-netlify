@@ -1,3 +1,6 @@
+import './bootstrap.css';
+import './style.css';
+
 window.onload = () => {
   window.app = new JogoVelha();
 };

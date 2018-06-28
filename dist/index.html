@@ -8,23 +8,26 @@
     <meta name="description" content="">
     <meta name="author" content="Joao Rubens Marchete Filho">
 
-    <meta property="og:title" content="TicTacToe Game"/>
-	<meta content="article" property="og:type">
-	<meta content="TicTacToe Game" property="og:site_name">
-	<meta property="og:url" content="https://affectionate-saha-acbc34.netlify.com/">
-	<meta property= "og:image" content="img.png"/>
-	<meta property="og:description" content="Play TicTacToe" />
+    <meta property="og:title" content="TicTacToe Game" />
+    <meta content="article" property="og:type">
+    <meta content="TicTacToe Game" property="og:site_name">
+    <meta property="og:url" content="https://affectionate-saha-acbc34.netlify.com/">
+    <meta property="og:image" content="img.png" />
+    <meta property="og:description" content="Play TicTacToe" />
 
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <link rel="manifest" href="/manifest.json">
     <title>Tic Tac Toe</title>
 
-    
+
 </head>
 
 <body>
-    <nav class="navbar navbar-expand-lg navbar-dark bg-primary fixed">
+    <nav class="navbar navbar-expand-lg navbar-dark fixed" style="background-color: #ffffff0a; padding: .5rem;">
         <div class="container">
-            <a class="navbar-brand" href="#">Game</a>
+            <a class="navbar-brand" href="#">
+                <img src="icon-72x72.png" alt="" style="width: 30px;"> TicTacToe</a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive"
                 aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
@@ -40,14 +43,14 @@
                     <li class="nav-item">
                         <a class="nav-link" href="#" id="limpa-temp">Clear</a>
                     </li>
-                    
+
                 </ul>
             </div>
         </div>
 
         <div id="modais"></div>
     </nav>
-    
+
     <div id="velha" class="velha">
         <div class="coluna">
             <span data-id="0" class="quadro"></span>
@@ -67,7 +70,7 @@
     </div>
 
     <script src="bundle.js"></script>
-    
+
 </body>
 
 </html>

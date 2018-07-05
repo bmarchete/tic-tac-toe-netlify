@@ -2,6 +2,8 @@
 
 Javascript implementation of the classic Tic Tac Toe game. It's possible to save the game state locally, and continue later! 
 
+You can check an online version at https://affectionate-saha-acbc34.netlify.com/
+
 ## Details
 
 - ES6 Syntax
